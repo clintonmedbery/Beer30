@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FE5764C4F0FF82A124C101C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE622DFD5E6FFFEABFEC186 /* Pods.framework */; };
+		883230911CB065DC0070E00B /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883230901CB065DC0070E00B /* NetworkHandler.swift */; };
 		88AA06E21CAF9526004CFD6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AA06E11CAF9526004CFD6F /* AppDelegate.swift */; };
 		88AA06E41CAF9526004CFD6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AA06E31CAF9526004CFD6F /* ViewController.swift */; };
 		88AA06E71CAF9526004CFD6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AA06E51CAF9526004CFD6F /* Main.storyboard */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3DAB8997C9C40EF43B28F0B8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4AE622DFD5E6FFFEABFEC186 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FC5A78DE14987400B85585D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		883230901CB065DC0070E00B /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		88AA06DE1CAF9526004CFD6F /* Beer30.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beer30.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88AA06E11CAF9526004CFD6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88AA06E31CAF9526004CFD6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FE5764C4F0FF82A124C101C /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D15C17DF75460F3D1EEC843 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3DAB8997C9C40EF43B28F0B8 /* Pods.debug.xcconfig */,
+				7FC5A78DE14987400B85585D /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		88AA06D51CAF9526004CFD6F = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +99,8 @@
 				88AA06F81CAF9527004CFD6F /* Beer30Tests */,
 				88AA07031CAF9527004CFD6F /* Beer30UITests */,
 				88AA06DF1CAF9526004CFD6F /* Products */,
+				1D15C17DF75460F3D1EEC843 /* Pods */,
+				AC3F1FE5B1AAE7F491F46910 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +124,7 @@
 				88AA06ED1CAF9526004CFD6F /* LaunchScreen.storyboard */,
 				88AA06F01CAF9526004CFD6F /* Info.plist */,
 				88AA06E81CAF9526004CFD6F /* Beer30.xcdatamodeld */,
+				883230901CB065DC0070E00B /* NetworkHandler.swift */,
 			);
 			path = Beer30;
 			sourceTree = "<group>";
@@ -128,6 +147,14 @@
 			path = Beer30UITests;
 			sourceTree = "<group>";
 		};
+		AC3F1FE5B1AAE7F491F46910 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4AE622DFD5E6FFFEABFEC186 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88AA07091CAF9527004CFD6F /* Build configuration list for PBXNativeTarget "Beer30" */;
 			buildPhases = (
+				3A9395AD571FCC0B1B52E72D /* Check Pods Manifest.lock */,
 				88AA06DA1CAF9526004CFD6F /* Sources */,
 				88AA06DB1CAF9526004CFD6F /* Frameworks */,
 				88AA06DC1CAF9526004CFD6F /* Resources */,
+				D74ED24322CBEAA8D67639DA /* Embed Pods Frameworks */,
+				D98C1AC47B791F902AB743B0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,6 +284,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3A9395AD571FCC0B1B52E72D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D74ED24322CBEAA8D67639DA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D98C1AC47B791F902AB743B0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		88AA06DA1CAF9526004CFD6F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -262,6 +340,7 @@
 				88AA06E41CAF9526004CFD6F /* ViewController.swift in Sources */,
 				88AA06E21CAF9526004CFD6F /* AppDelegate.swift in Sources */,
 				88AA06EA1CAF9526004CFD6F /* Beer30.xcdatamodeld in Sources */,
+				883230911CB065DC0070E00B /* NetworkHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,9 +482,11 @@
 		};
 		88AA070A1CAF9527004CFD6F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DAB8997C9C40EF43B28F0B8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Beer30/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FTPA.Beer30;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,9 +495,11 @@
 		};
 		88AA070B1CAF9527004CFD6F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FC5A78DE14987400B85585D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Beer30/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FTPA.Beer30;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,6 +571,7 @@
 				88AA070B1CAF9527004CFD6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		88AA070C1CAF9527004CFD6F /* Build configuration list for PBXNativeTarget "Beer30Tests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +580,7 @@
 				88AA070E1CAF9527004CFD6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		88AA070F1CAF9527004CFD6F /* Build configuration list for PBXNativeTarget "Beer30UITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +589,7 @@
 				88AA07111CAF9527004CFD6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
