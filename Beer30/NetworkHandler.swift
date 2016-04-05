@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Freddy
+import SwiftyJSON
 import Alamofire
 
 class NetworkHandler {
@@ -25,7 +25,7 @@ class NetworkHandler {
 //
 //    }
 //    
-    func readyManager(completion: ((success:Bool, error:NSError!) -> Void)!) {
+    func readyManager(completion: ((success:Bool, result: JSON) -> Void)!) {
         
         
         var defaultHeaders = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders ?? [:]
@@ -45,17 +45,24 @@ class NetworkHandler {
         
         readyCredentials(manager!)
                 manager!.request(.GET, "https://beer30v2.sparcedge.com/beer30.json").responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response) // URL response
-                    print(response.data)     // server data
-                    print(response.result)   // result of response serialization
-                    print(response)
-        
-                    if let JSON = response.result.value {
-                        print("JSON: \(JSON)")
+//                    print(response.request)  // original URL request
+//                    print(response.response) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)   // result of response serialization
+//                    print(response)
+//                    var responseJSON: String = response.result.value as! String
+                    if response.result.isSuccess {
+                        let json:JSON = JSON(response.result.value!)
+                        completion(success: true, result: json)
+                    } else {
+                        completion(success:false, result: nil)
                     }
-                }    }
+                    
+                }
+            }
+    
     }
+
     
     func readyCredentials(manager: Manager){
         manager.delegate.sessionDidReceiveChallenge = { session, challenge in

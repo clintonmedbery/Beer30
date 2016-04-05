@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Beer30" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,57 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2B0-0l-fun">
+                                <rect key="frame" x="180" y="408" width="240" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="qjv-X1-mzP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDY-RZ-efy">
+                                <rect key="frame" x="279" y="514" width="42" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="B1d-VE-6LA"/>
+                                </constraints>
+                                <state key="normal" image="ReloadIcon"/>
+                                <connections>
+                                    <action selector="reloadBeerStatus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lwm-Eg-DLY"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UCB-nh-L5o">
+                                <rect key="frame" x="180" y="105" width="240" height="274"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UCB-nh-L5o" secondAttribute="height" multiplier="120:137" id="ZOO-x2-OAv"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.59999999999999998" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UCB-nh-L5o" secondAttribute="bottom" constant="221" id="67w-hs-xfs"/>
+                            <constraint firstItem="EDY-RZ-efy" firstAttribute="top" secondItem="2B0-0l-fun" secondAttribute="bottom" constant="40" id="9KW-PN-4q2"/>
+                            <constraint firstItem="2B0-0l-fun" firstAttribute="trailing" secondItem="UCB-nh-L5o" secondAttribute="trailing" id="KOh-eG-mHJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EDY-RZ-efy" secondAttribute="bottom" constant="41" id="S7M-LK-XeX"/>
+                            <constraint firstItem="UCB-nh-L5o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sxg-qk-cuc"/>
+                            <constraint firstItem="UCB-nh-L5o" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="85" id="TdN-xE-I8B"/>
+                            <constraint firstItem="2B0-0l-fun" firstAttribute="leading" secondItem="UCB-nh-L5o" secondAttribute="leading" id="aAT-nR-wkF"/>
+                            <constraint firstItem="2B0-0l-fun" firstAttribute="top" secondItem="UCB-nh-L5o" secondAttribute="bottom" constant="29" id="qgF-Gd-P4q"/>
+                            <constraint firstItem="EDY-RZ-efy" firstAttribute="centerX" secondItem="2B0-0l-fun" secondAttribute="centerX" id="tna-Kl-eAI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="beerImageView" destination="UCB-nh-L5o" id="dem-yc-Vzs"/>
+                        <outlet property="informationLabel" destination="2B0-0l-fun" id="w9n-Em-wx3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="624" y="371"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ReloadIcon" width="512" height="512"/>
+    </resources>
 </document>

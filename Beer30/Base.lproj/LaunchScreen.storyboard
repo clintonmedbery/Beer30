@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,13 +16,40 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beer30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbg-ug-1Zx">
+                                <rect key="frame" x="211" y="81" width="178" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="178" id="mG2-LP-Qe0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="52"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FullBeer" translatesAutoresizingMaskIntoConstraints="NO" id="bLw-1j-9h3">
+                                <rect key="frame" x="180" y="178" width="240" height="243"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bLw-1j-9h3" secondAttribute="height" multiplier="80:81" id="Giw-AJ-Pgq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.59999999999999998" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bLw-1j-9h3" firstAttribute="top" secondItem="jbg-ug-1Zx" secondAttribute="bottom" constant="36" id="6a4-7O-qJf"/>
+                            <constraint firstItem="bLw-1j-9h3" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Mht-Gp-dOJ"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="bLw-1j-9h3" secondAttribute="bottom" constant="179" id="R1N-0M-UAa"/>
+                            <constraint firstItem="jbg-ug-1Zx" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="61" id="a6H-ft-Bzj"/>
+                            <constraint firstItem="jbg-ug-1Zx" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ggI-5i-bcP"/>
+                            <constraint firstItem="bLw-1j-9h3" firstAttribute="centerX" secondItem="jbg-ug-1Zx" secondAttribute="centerX" id="gok-qy-78S"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="534" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FullBeer" width="500" height="500"/>
+    </resources>
 </document>
