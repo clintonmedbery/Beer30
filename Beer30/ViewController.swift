@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     }
     
     func checkBeerStatus(){
-        NetworkHandler.handler.readyManager { (success, result) in
+        NetworkHandler.handler.callBeer30JSON { (success, result) in
             if(success == true){
                 
                 print(result)
