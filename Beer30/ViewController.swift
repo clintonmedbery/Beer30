@@ -19,7 +19,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         checkBeerStatus()
-
+        var swipeDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeDown.direction = UISwipeGestureRecognizerDirection.Down
+        self.view.addGestureRecognizer(swipeDown)
         
     }
 
@@ -29,6 +31,8 @@ class ViewController: UIViewController {
     }
     
     func checkBeerStatus(){
+        informationLabel.text = "Loading..."
+        self.beerImageView.image = nil
         NetworkHandler.handler.callBeer30JSON { (success, result) in
             if(success == true){
                 
@@ -58,10 +62,24 @@ class ViewController: UIViewController {
     }
 
     @IBAction func reloadBeerStatus(sender: AnyObject) {
-        informationLabel.text = "Loading..."
-        self.beerImageView.image = nil
+        
         checkBeerStatus()
     }
-   
+    
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Down:
+                print("Swiped down")
+                checkBeerStatus()
+            default:
+                break
+            }
+        }
+    }
+
 }
 

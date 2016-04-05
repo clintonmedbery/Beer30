@@ -42,8 +42,8 @@ class NetworkHandler {
     
     func callBeer30JSON(completion: ((success:Bool, result: JSON) -> Void)!) {
         manager!.request(.GET, "https://beer30v2.sparcedge.com/beer30.json").responseJSON { response in
-            //                    print(response.request)  // original URL request
-            //                    print(response.response) // URL response
+//                                print(response.request)  // original URL request
+//                                print(response.response) // URL response
             //                    print(response.data)     // server data
             //                    print(response.result)   // result of response serialization
             //                    print(response)
